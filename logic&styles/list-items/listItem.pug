@@ -1,0 +1,40 @@
+-
+  const { city, country, type, code, text } = data;
+  const { boldText, regularText } = text;
+
+if (!(type && code))
+  .field-autocomplete__dropdown-item.js-autocomplete__dropdown-item
+    .field-autocomplete__dropdown-name
+      if data
+        span.field-autocomplete__dropdown-city
+          b
+            = boldText
+          = regularText
+        if country
+          span.field-autocomplete__dropdown-country
+            = ', ' + country
+
+else if (type === 'city')
+  .field-autocomplete__dropdown-item.field-autocomplete__dropdown-city-avia.js-autocomplete__dropdown-item
+    .field-autocomplete__dropdown-name
+      if data
+        span.field-autocomplete__dropdown-city
+          b
+            = boldText
+          = regularText
+          if country
+            span.field-autocomplete__dropdown-country
+              = ', ' + country
+      if code
+        .field-autocomplete__dropdown-code
+          = code
+
+else if (type === 'airport')
+  .field-autocomplete__dropdown-item.field-autocomplete__dropdown-airport.js-autocomplete__dropdown-item
+    .field-autocomplete__dropdown-name
+      if data
+        span.field-autocomplete__dropdown-city
+          = city
+        if code
+          span.field-autocomplete__dropdown-code
+            = code

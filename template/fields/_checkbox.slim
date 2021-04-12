@@ -1,0 +1,8 @@
+.form-checkbox class="#{'js-' + id if defined?(id)}"
+  input.form-checkbox__input type="checkbox" id=(id if defined?(id))
+  - if text
+    label.form-checkbox__label for=(id if defined?(id))
+      | #{text}
+      .form-checkbox__toggle
+
+

@@ -1,0 +1,14 @@
+.passenger-field.js-passengers
+  .passenger-field__body
+    .counter-field__count.js-adults
+      = render 'commercial/search-forms/fields/counter', title: 'Взрослые'
+
+    .counter-field__count.js-children-to-12
+      = render 'commercial/search-forms/fields/counter', title: 'Дети до 12 лет'
+
+    .counter-field__count.js-children-to-2
+      = render 'commercial/search-forms/fields/counter', title: 'Дети до 2 лет'
+
+    .passenger-field__tab-container.js-tabs
+      .passenger-field__tab-item.js-tab.active data-class="economy" Эконом
+      .passenger-field__tab-item.js-tab data-class="business" Бизнес

@@ -1,0 +1,108 @@
+@import "~common"
+
+.new-search-forms__fields
+  .passenger-field
+    visibility: hidden
+    opacity: 0
+    position: absolute
+    top: 89px
+    z-index: 10
+    width: 100%
+    padding: 25px 20px
+    background: #fff
+    box-shadow: 0 10px 30px rgba(31, 21, 1, 0.1)
+    border-radius: 5px
+    user-select: none
+    transition: .25s opacity
+
+    +max-w($desktop_sm)
+      width: 253px
+
+    +max-w($mobile_lg_max)
+      top: 65px
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      margin: auto
+      padding: 0 15px
+      box-shadow: none
+
+    +min-w($desktop_mf)
+      min-width: 253px
+
+
+    .passenger-field__tab-container
+      display: flex
+      margin-top: 23px
+
+      +mediamaxmin($mobile_lg_max, $mobile_mf)
+        max-width: 320px
+        margin: 23px auto 0
+
+
+    .passenger-field__tab-item
+      flex-basis: 50%
+      text-align: center
+      font-size: 15px
+      background: #F9F7F2
+      cursor: pointer
+      height: 40px
+      line-height: 40px
+
+      &:first-child
+        border-radius: 5px 0 0 5px
+
+      &:last-child
+        border-radius: 0 5px 5px 0
+
+      &.active
+        background: $color_theme
+        color: #fff
+
+  .passenger-field__open
+    +max-w($mobile_lg_max)
+      margin-top: 0
+      position: fixed
+      top: 0
+      right: 0
+      left: 0
+      bottom: 0
+      border-radius: 0
+      border: none
+      z-index: 15
+      width: 100%
+      height: auto
+      padding-top: 65px
+
+      .new-field-base__control-wrap
+        max-width: 100%
+        padding: 0 12px
+        width: 100%
+        display: block
+        margin: 0 auto
+
+      .new-field-base__control-wrap--select::before
+        display: none
+
+      .new-field-base__label
+        display: block
+
+      .new-field-base__input
+        font-size: 21px
+
+      .new-field-base__modal-close
+        display: block
+
+    +min-w($tablet_mf)
+      margin-top: 2px
+
+      .new-field-base__control-wrap--select::before
+        transform: rotate(180deg)
+
+    +min-w($desktop_mf)
+      margin-top: 0
+
+    .passenger-field
+      visibility: visible
+      opacity: 1
+

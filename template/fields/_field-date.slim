@@ -1,0 +1,24 @@
+.new-field-date.js-datepicker
+  .new-field-date__head
+    - if local_assigns[:double]
+      span.new-field-date__head-title.js-head-title Выберите дату отправления
+    - else
+      span.new-field-date__head-title.js-head-title Выберите дату
+
+    - if local_assigns[:double]
+      button.new-field-date__head-button.js-datemodal-btn.js-disabled type="button" Обратный билет не нужен
+
+  .new-field-date__body
+    .new-field-date__body-inner
+      .js-calendar
+        .new-field-date__loading.js-date-loading
+          .new-field-date__loading-wrap
+            span.new-field-date__loading-image-wrap
+              = image_tag 'seo_pages/avia/preloader.svg', alt:'loader', loading: "lazy", width: 22, height: 22, class: "new-field-date__loading-img"
+            span.new-field-date__loading-text Загрузка
+
+    - if local_assigns[:bottom_button]
+      .new-field-date__float-wrap.js-float-wrap
+        button.new-field-date__float-btn.js-float-date type="button" #{float_text_btn if defined?(float_text_btn)}
+
+  .new-field-date__close.js-modal-close

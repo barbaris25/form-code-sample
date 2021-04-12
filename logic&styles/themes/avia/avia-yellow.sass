@@ -1,0 +1,151 @@
+@import "~common"
+
+.avia-forms--yellow
+  background: linear-gradient(268.66deg, #F1E3C1 6.01%, #E7D8B4 95.47%)
+  padding: 25px 12px
+
+  +min-w($tablet_mf)
+    padding: 45px 20px
+    border-radius: 5px
+
+  +min-w($desktop_sm_mf)
+    padding: 40px
+
+
+  .new-search-forms__fields
+    background-color: transparent
+    margin-bottom: 0
+
+
+  .avia-forms__appendage
+    +min-w($desktop_mf)
+      margin-top: 22px
+
+
+  .form-checkbox .form-checkbox__label
+    color: #000
+    font-size: 15px
+
+
+  .avia-forms__field--1, .avia-forms__field--2
+    +min-w($tablet_mf)
+      flex-basis: calc(50% - 1px)
+      margin-bottom: 30px
+
+    +min-w($desktop_mf)
+      flex-basis: calc(28.03% - 1px)
+      margin-bottom: 0
+
+
+  .avia-forms__field--3, .avia-forms__field--4
+    +min-w($tablet_mf)
+      flex-basis: calc(20.5% - 1px)
+
+    +min-w($desktop_mf)
+      flex-basis: calc(13.08% - 1px)
+
+
+  .avia-forms__field--1, .avia-forms__field--3
+    +min-w($tablet_mf)
+      border-radius: 5px 0 0 5px
+      margin-right: 1px
+
+    +min-w($desktop_mf)
+      margin-right: 1px
+
+
+  .avia-forms__field--2, .avia-forms__field--4
+    +min-w($tablet_mf)
+      border-radius: 0 5px 5px 0
+
+
+  .avia-forms__field--2
+    border-radius: 0 0 5px 5px
+
+    +min-w($tablet_mf)
+      border-radius: 0 5px 5px 0
+
+
+  .avia-forms__field--3
+    border-radius: 5px 0 0 5px
+    margin-top: 10px
+    margin-bottom: 10px
+
+    +min-w($tablet_mf)
+      margin-top: 0
+      margin-bottom: 0
+
+    +min-w($desktop_mf)
+      margin-left: 5px
+
+
+  .avia-forms__field--4
+    border-radius: 0 5px 5px 0
+    margin-top: 10px
+    margin-bottom: 10px
+
+    +min-w($tablet_mf)
+      margin-top: 0
+      margin-bottom: 0
+
+
+  .avia-forms__field--5
+    border-radius: 5px
+
+    +min-w($tablet_mf)
+      flex-basis: 31%
+      margin-top: 0
+      margin-left: 5px
+
+      .new-field-base__control-wrap--select::before
+        top: 27px
+
+      .passenger-field
+        top: 58px
+
+    +min-w($desktop_mf)
+      flex-basis: 16.82%
+
+
+    &.passenger-field__open
+      position: fixed
+
+      +min-w($tablet_mf)
+        position: relative
+
+      .new-field-base__label
+        left: auto
+        color: #000
+
+        +min-w($tablet_mf)
+          left: 0
+
+      .passenger-field
+        top: 70px
+
+        +min-w($tablet_mf)
+          top: 58px
+
+
+  .new-search-forms__action
+    +max-w($mobile_lg_max)
+      display: block
+      margin-top: 20px
+
+
+  .avia-forms__appendage
+    position: static
+
+    +mediamaxmin($tablet_lg, $mobile_md_mf)
+      margin-top: 20px
+
+
+  .avia-forms__field--3, .avia-forms__field--4
+    .new-field-base__input
+      +min-w($tablet_mf)
+        font-size: 17px
+
+
+  .new-search-forms__btn
+    +min-w($tablet_mf)
+      font-size: 17px

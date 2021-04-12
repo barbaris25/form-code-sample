@@ -1,0 +1,28 @@
+= stylesheet_link_tag *webpack_asset_paths('avia-form', extension: 'css')
+= javascript_include_tag *webpack_asset_paths('avia-form', extension: 'js'), :async => true
+
+.avia-forms class="#{'avia-forms--' + theme if defined?(theme)}"
+  form.new-search-forms.js-avia-form class="#{'new-search-forms--' + theme if defined?(theme)}" data-submit-options="#{local_assigns[:submit_options].to_json}" data-autocomplete-url="#{local_assigns[:autocomplete_url]}" data-form-type="#{local_assigns[:form_type]}"
+    .new-search-forms__fields
+      .new-search-forms__field.js-field-from.avia-forms__field--1 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+        - placeholder_from = @device == :mobile ? 'Москва' : 'Откуда'
+        = render "commercial/search-forms/fields/base-field", label: 'Откуда', placeholder_text: placeholder_from, 'autocomplete': true, 'has_arrow': true, default_data_name: :name, default_data: local_assigns[:default_city_from]
+      .new-search-forms__field.js-field-to.avia-forms__field--2 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+        - placeholder_to = @device == :mobile ? 'Санкт-Петербург' : 'Куда'
+        = render "commercial/search-forms/fields/base-field", label: 'Куда', placeholder_text: placeholder_to, 'autocomplete': true, default_data_name: :name, default_data: local_assigns[:default_city_to]
+      .new-search-forms__field.js-date-from.js-date-double.avia-forms__field--3 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+        - placeholder_date_from = @device == :mobile ? 'Туда' : 'Дата'
+        = render "commercial/search-forms/fields/base-field", label: 'Туда', placeholder_text: placeholder_date_from, 'calendar': true, has_date_icon: true
+      .new-search-forms__field.js-date-to.js-date-double.avia-forms__field--4 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+        - placeholder_date_to = @device == :mobile ? 'Обратно' : 'Дата'
+        = render "commercial/search-forms/fields/base-field", label: 'Обратно', placeholder_text: placeholder_date_to, 'calendar': true
+      .new-search-forms__field.js-passengers.avia-forms__field--5 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+        = render "commercial/search-forms/fields/base-field", label: 'Пассажиры и класс', 'passengers': true, asSelect: 'select', default_data: local_assigns[:passengers], value_data: '1 пассажир'
+      = render "commercial/search-forms/fields/field-date", double: true
+    .new-search-forms__action
+      button.new-search-forms__btn Найти билеты
+
+  - if local_assigns[:form_type] === 'landing'
+    .avia-forms__appendage
+      = render "commercial/search-forms/fields/checkbox", id: 'aviasales', text: 'Проверить также на Aviasales'
+      = render "commercial/search-forms/fields/checkbox", id: 'skyscanner', text: 'Проверить также на Skyscanner'

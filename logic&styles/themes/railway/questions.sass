@@ -1,0 +1,164 @@
+@import "~common"
+
+.new-search-forms--questions
+  position: relative
+  padding: 20px 15px
+  background: #f5f1e8
+  border-radius: 2px
+  border: 1px solid #ccc
+  box-shadow: none
+
+  +min-w($desktop_mf)
+    display: flex
+    justify-content: space-between
+
+
+  .new-search-forms__fields
+    background: transparent
+    margin-bottom: 20px
+    box-shadow: none
+
+    +min-w($tablet_mf)
+      margin-bottom: 0
+
+    +max-w($tablet_lg)
+      justify-content: flex-start
+
+    +min-w($desktop_mf)
+      justify-content: flex-start
+      flex-wrap: wrap
+      width: 100%
+      max-width: 100%
+
+
+  .new-search-forms__field
+    background: #fff
+    cursor: pointer
+
+    +min-w($tablet_mf)
+      height: 58px
+      border-width: 2px
+
+
+  .railway-forms__field--1
+    border-radius: 5px 5px 0 0
+
+    +min-w($tablet_mf)
+      border-radius: 5px 0 0 5px
+
+
+  .railway-forms__field--2
+    border-radius: 0 0 5px 5px
+    margin-bottom: 10px
+
+    +min-w($tablet_mf)
+      margin-bottom: 30px
+      border-radius: 0 5px 5px 0
+
+    +min-w($desktop_mf)
+      margin-right: 0
+
+    .new-field-base__control-wrap
+      padding: 15px 12px
+
+      +min-w($tablet_mf)
+        padding: 16px 20px 0
+
+
+  .railway-forms__field--3
+    border-radius: 5px 0 0 5px
+
+    +min-w($tablet_mf)
+      flex-basis: calc(25% - 1px)
+
+    +min-w($desktop_mf)
+      margin-right: 1px
+
+
+  .railway-forms__field--4
+    border-radius: 0 5px 5px 0
+
+    +min-w($tablet_mf)
+      flex-basis: calc(25% - 1px)
+
+
+  .railway-forms__field--1, .railway-forms__field--2
+    +min-w($desktop_mf)
+      flex-basis: calc(50% - 1px)
+
+
+  .railway-forms__field--3, .railway-forms__field--4
+    +min-w($desktop_mf)
+      flex-basis: calc(25% - 1px)
+
+
+  .new-field-base__control-wrap
+    +min-w($tablet_mf)
+      padding: 16px 15px
+
+
+  .new-search-forms__field .new-field-base__input
+    +min-w($tablet_mf)
+      font-size: 17px
+
+
+  .new-search-forms__action
+    box-shadow: none
+
+    +min-w($tablet_mf)
+      position: absolute
+      right: 15px
+      bottom: 20px
+      max-width: calc(26% - 12px)
+      min-width: 195px
+      width: 100%
+
+    +min-w($desktop_mf)
+      max-width: 255px
+
+
+  .new-search-forms__btn
+    +min-w($tablet_mf)
+      height: 58px
+      font-size: 17px
+
+
+  // Focus styles
+  .focused
+    position: relative
+
+
+  .new-field-base__label
+    +min-w($tablet_mf)
+      display: none
+      color: #86754B
+
+
+  .focused .new-field-base__label
+    +min-w($tablet_mf)
+      display: block
+      position: absolute
+      top: -18px
+      left: 0
+
+
+  // Autocomplete styles
+  .field-autocomplete
+    top: 58px
+
+    +min-w($tablet_mf)
+      top: 58px
+      box-shadow: 0 10px 30px rgba(31, 21, 1, 0.1)
+      border-radius: 5px
+
+
+  .railway-forms__field--1, .railway-forms__field--2
+    +max-w($mobile_lg)
+      .js-field__mobile
+        margin: 0 -18px
+
+        .field-autocomplete
+          padding: 15px 10px
+
+        .new-field-base__label
+          display: block

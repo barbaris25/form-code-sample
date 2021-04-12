@@ -1,0 +1,88 @@
+@import "~common"
+
+// Yellow form styles
+.new-search-forms.new-search-forms--yellow
+
+  +min-w($tablet_mf)
+    padding: 20px 0 0
+    margin-bottom: 20px
+
+  +min-w($desktop_mf)
+    padding: 0
+    margin-bottom: 0
+
+
+  .new-search-forms__fields
+    background-color: transparent
+
+
+  .new-search-forms__field
+    margin-right: 1px
+
+
+  .railway-forms__field--1
+    border-radius: 5px 5px 0 0
+
+    +min-w($tablet_mf)
+      border-radius: 5px 0 0 5px
+
+
+  .railway-forms__field--2
+    border-radius: 0 0 5px 5px
+    margin-bottom: 10px
+
+    +min-w($tablet_mf)
+      margin-bottom: 30px
+      border-radius: 0 5px 5px 0
+
+    +min-w($desktop_mf)
+      margin-bottom: 0
+
+    .new-field-base__control-wrap
+      padding: 15px 12px
+
+      +min-w($tablet_mf)
+        padding: 16px 20px 0
+
+
+  .railway-forms__field--3
+    border-radius: 5px 0 0 5px
+
+    +min-w($tablet_mf)
+      flex-basis: 35.9%
+
+    +min-w($desktop_mf)
+      margin-left: 5px
+
+
+  .railway-forms__field--4
+    border-radius: 0 5px 5px 0
+
+    +min-w($tablet_mf)
+      flex-basis: 35.9%
+
+
+  .railway-forms__field--1, .railway-forms__field--2
+    +min-w($desktop_mf)
+      flex-basis: 36.5%
+
+
+  .railway-forms__field--3, .railway-forms__field--4
+    +min-w($tablet_mf)
+      .new-field-base__input
+        font-size: 17px
+
+    +min-w($desktop_mf)
+      flex-basis: 13.2%
+
+
+  .railway-forms__field--1, .railway-forms__field--2
+    +max-w($mobile_lg)
+      .js-field__mobile
+        margin: 0 -32px
+
+        .field-autocomplete
+          padding: 15px 10px
+
+        .new-field-base__label
+          display: block

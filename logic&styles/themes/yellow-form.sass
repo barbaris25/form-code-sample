@@ -1,0 +1,116 @@
+@import "~common"
+
+.new-search-forms--yellow
+  position: relative
+  box-shadow: none
+
+  +min-w($desktop_mf)
+    display: flex
+    justify-content: space-between
+
+  .new-search-forms__fields
+    background: transparent
+    margin-bottom: 20px
+    box-shadow: none
+
+    +min-w($tablet_mf)
+      margin-bottom: 0
+
+    +max-w($tablet_lg)
+      justify-content: flex-start
+
+    +min-w($desktop_mf)
+      justify-content: flex-start
+      flex-wrap: nowrap
+      width: 100%
+      max-width: calc(100% - 192px)
+
+
+  .new-search-forms__field
+    background: #fff
+
+    +min-w($tablet_mf)
+      height: 58px
+      border-width: 2px
+
+    &.js-mobile-open
+      position: fixed
+      height: 100vh
+
+
+  .new-field-base__control-wrap
+    +min-w($tablet_mf)
+      padding: 16px 15px
+
+
+  .new-search-forms__field .new-field-base__input
+    +min-w($tablet_mf)
+      font-size: 17px
+
+
+  .new-search-forms__action
+    box-shadow: none
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      position: absolute
+      right: 0
+      bottom: 0
+      max-width: calc(26% - 12px)
+      min-width: 180px
+      width: 100%
+
+    +min-w($desktop_mf)
+      max-width: 180px
+
+
+  .new-search-forms__btn
+    +min-w($tablet_mf)
+      height: 58px
+      font-size: 17px
+
+
+  // Focus styles
+  .new-field-base__label
+    transition: .2s all
+    position: static
+    color: #86754B
+    font-size: 11px
+
+    +min-w($tablet_mf)
+      position: absolute
+      visibility: hidden
+      opacity: 0
+      top: -5px
+      left: 0
+
+    &.visible
+      top: -22px
+
+
+  .js-mobile-open .new-field-base__label
+    position: static
+    color: #000
+
+
+  .new-field-base__label.visible
+    +min-w($tablet_mf)
+      visibility: visible
+      opacity: 1
+
+
+  .incorrect .new-field-base__label.visible
+      +min-w($tablet_mf)
+        color: #f10
+
+
+  // Autocomplete styles
+  .field-autocomplete
+    top: 58px
+
+    +min-w($tablet_mf)
+      top: 58px
+      box-shadow: 0 10px 30px rgba(31, 21, 1, 0.1)
+      border-radius: 5px
+
+
+

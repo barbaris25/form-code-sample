@@ -1,0 +1,128 @@
+@import "~common"
+
+// Border styles for railway fields
+.railway-forms
+
+  .new-search-forms__fields
+    background-color: #F0EADE
+
+
+  .new-search-forms__field
+    background-color: #fff
+
+    +min-w($desktop_mf)
+      margin-right: 2px
+
+      &.incorrect
+        border-color: #f10
+
+      &.focused
+        border-color: #000
+
+    &:last-child
+      +min-w($desktop_mf)
+        margin-right: 0
+
+
+  .railway-forms__field--1,
+  .railway-forms__field--2
+    flex-basis: 100%
+
+    +min-w($tablet_mf)
+      flex-basis: 50%
+
+    +mediamaxmin(1023px, $tablet_mf)
+      flex-basis: calc(50% - 1px)
+      margin-bottom: 2px
+
+    +min-w($desktop_mf)
+      flex-basis: calc(32% - 2px)
+
+
+  .railway-forms__field--3,
+  .railway-forms__field--4
+    flex-basis: 50%
+    max-width: 50%
+
+    +max-w($mobile_lg)
+      flex-basis: calc(50% - 1px)
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      flex-basis: calc(50% - 1px)
+
+
+  .railway-forms__field--1
+    +max-w($tablet_lg)
+      border-radius: 5px 5px 0 0
+
+    +min-w($tablet_mf)
+      margin-right: 2px
+      border-radius: 5px 0 0 0
+
+    +min-w($desktop_mf)
+      border-radius: 5px 0 0 5px
+
+
+  .railway-forms__field--2
+    margin: 1px 0
+    border-radius: 0
+
+    +min-w($tablet_mf)
+      margin: 0
+      border-top-right-radius: 5px
+
+    +min-w($desktop_mf)
+      flex-basis: calc(32% - 2px)
+      margin: 0 2px 0 0
+      border-radius: 0
+
+
+  .railway-forms__field--3
+    +min-w($desktop_mf)
+      flex-basis: 20%
+
+    +max-w($tablet_lg)
+      margin-right: 1px
+      border-bottom-left-radius: 5px
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      margin-right: 2px
+
+    +min-w($desktop_mf)
+      flex-basis: calc(20% - 2px)
+
+
+  .railway-forms__field--4
+    +max-w($tablet_lg)
+      border-bottom-right-radius: 5px
+
+    +min-w($desktop_mf)
+      margin-right: 0
+      flex-basis: 16%
+      border-radius: 0 5px 5px 0
+
+
+  // Inner styles for fields
+  .railway-forms__field--1
+    .field-base__changer
+      +min-w($tablet_mf)
+        right: -17px
+
+
+  .railway-forms__field--3, .railway-forms__field--4
+    .new-field-base__input
+      padding: 0
+      border: none
+      background: transparent
+      font-size: 21px
+      height: auto
+      color: inherit
+
+      +max-w($mobile_lg_max)
+        font-size: 16px
+
+      +min-w($tablet_mf)
+        background-size: auto
+
+      .no-touch &:hover
+        cursor: pointer

@@ -1,0 +1,33 @@
+ruby:
+  data = local_assigns[:default_data]
+  field_name = local_assigns[:default_data_name]
+  value = local_assigns[:value_data] || ''
+  if data && field_name
+    value = data[field_name]
+  end
+
+.new-field-base
+  .new-field-base__control-wrap.js-control class="#{'new-field-base__control-wrap--' + asSelect if defined?(asSelect)}"
+    .new-field-base__label.js-label #{label if defined?(label)}
+    .new-field-base__control class="#{'new-field-base__date-control' if defined?(has_date_icon)}"
+      - if local_assigns[:has_date_icon]
+        = inline_svg_tag 'commercial/search-forms/calendar.svg', class: "new-field-base__date-icon"
+      input.new-field-base__input.js-input value="#{value}" placeholder="#{placeholder_text if defined?(placeholder_text)}" data-default="#{data.to_json if data}"
+
+  - if local_assigns[:has_arrow]
+    .new-field-base__changer.js-changer
+      = inline_svg_tag 'commercial/search-forms/icon-change.svg', class: "new-field-base__changer-icon"
+
+  - if local_assigns[:autocomplete]
+    = render 'commercial/search-forms/fields/field-autocomplete'
+
+  - if local_assigns[:passengers]
+    = render 'commercial/search-forms/fields/passenger-field'
+
+  - if local_assigns[:nights]
+    = render 'commercial/search-forms/fields/nights-field'
+
+  - if local_assigns[:tourists]
+    = render 'commercial/search-forms/fields/tourists-field'
+
+  .new-field-base__modal-close.js-close

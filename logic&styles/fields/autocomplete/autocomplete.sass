@@ -1,0 +1,144 @@
+@import "~common"
+
+.field-autocomplete
+  display: none
+  position: absolute
+  top: 60px
+  left: 0
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 15px 10px
+  background: #fff
+  z-index: 10
+
+  +min-w($tablet_mf)
+    top: 90px
+    height: auto
+    padding: 15px 20px
+
+  +min-w($desktop_mf)
+    box-shadow: 0 10px 30px rgba(31, 21, 1, 0.1)
+    border-radius: 5px
+    width: 393px
+
+
+.field-autocomplete.js-autocomplete
+  +max-w($mobile_md)
+    display: none
+
+
+.js-mobile-open .field-autocomplete.js-autocomplete
+  +max-w($mobile_md)
+    display: block
+
+
+
+.field-autocomplete--visible
+  display: block
+
+
+.field-autocomplete__dropdown-list
+  margin: 0 -20px
+
+
+.field-autocomplete__dropdown-item
+  cursor: pointer
+  user-select: none
+  position: relative
+  padding: 11px 20px 11px 48px
+  background-image: url('./icon-marker.svg')
+  background-size: 12px
+  background-repeat: no-repeat
+  background-position: 25px 12px
+
+  &.field-autocomplete__dropdown-empty
+    background-image: none
+    padding-left: 20px
+    user-select: none
+
+    &:hover
+      background-color: transparent
+
+  &.field-autocomplete__dropdown-city-avia
+    background-image: none
+    padding-left: 22px
+
+  &.field-autocomplete__dropdown-airport
+    background-image: url('./avia.svg')
+    background-size: 18px
+    background-position: 22px 16px
+
+  &.field-autocomplete__dropdown-hotel
+    background-image: url('./hotel-icon.svg')
+    background-size: 16px
+    background-position: 22px 14px
+
+    .field-autocomplete__dropdown-country
+      display: block
+
+  &:hover, &.hovered, &.active
+    background-color: #FDE283
+
+    .field-autocomplete__dropdown-code
+      color: #000
+
+
+.field-autocomplete__dropdown-name
+  font-size: 15px
+  line-height: 1.2
+
+
+.field-autocomplete__dropdown-country
+  font-size: 15px
+  color: #A0A0A0
+
+
+.field-autocomplete__dropdown-code
+  text-transform: uppercase
+  color: #A0A0A0
+
+
+// JS styles
+.js-mobile-open
+  position: fixed
+  z-index: 15
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  padding-top: 50px
+
+
+.js-mobile-open .field-autocomplete
+  display: block
+
+
+.js-mobile-open .new-field-base__control-wrap
+  position: relative
+  z-index: 15
+  background-color: #fff
+
+
+.js-mobile-open .field-autocomplete__dropdown-list
+  position: relative
+  z-index: 10
+  overflow-x: hidden
+  overflow-y: auto
+
+
+.js-mobile-open .field-autocomplete::before
+  content: ''
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: #fff
+  z-index: 2
+
+
+.incorrect .js-mobile-open .new-field-base__label
+  color: #a0a0a0
+

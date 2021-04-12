@@ -1,0 +1,200 @@
+@import "~common"
+
+.new-search-forms
+  box-shadow: 0 10px 30px rgba(24, 12, 1, 0.3)
+  +min-w($desktop_mf)
+    display: flex
+
+  &--no-shadow
+    box-shadow: none
+
+.new-search-forms__fields
+  position: relative
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  width: 100%
+  height: auto
+  background: #FFFFFF
+  border-radius: 5px
+  margin-bottom: 23px
+  box-shadow: 0 10px 30px rgba(24, 12, 1, 0.3)
+
+  +min-w($tablet_mf)
+    margin-bottom: 20px
+
+  +min-w($desktop_mf)
+    margin-bottom: 0
+    flex-wrap: nowrap
+    width: 80%
+
+
+.new-search-forms__field
+  display: flex
+  flex-basis: 100%
+  min-width: 0
+  border: 2px solid transparent
+  cursor: pointer
+  -webkit-tap-highlight-color: transparent
+  height: 50px
+
+  +min-w($tablet_mf)
+    height: 90px
+    flex-basis: 50%
+
+
+.new-search-forms__field
+  flex-basis: 50%
+
+  +min-w($tablet_mf)
+    transition: .2s border
+
+  +min-w($desktop_mf)
+    flex-basis: 25%
+
+
+.new-search-forms__field.incorrect
+  border: 2px solid #f10
+
+
+.new-search-forms__field.focused
+  +min-w($desktop_mf)
+    border: 2px solid #212121
+
+
+.new-search-forms__field.incorrect .new-field-base__label
+  color: #f10
+
+.new-search-forms__field--yellow.incorrect .new-field-base__label
+  color: inherit
+
+.new-search-forms__field.incorrect.focused .new-field-base__label
+  color: #000
+
+
+.new-search-forms__action
+  width: 100%
+  box-shadow: 0 10px 30px rgba(24, 12, 1, 0.3)
+
+  +min-w($desktop_mf)
+    width: 20%
+    margin-left: 13px
+    box-shadow: none
+
+
+.new-search-forms__btn
+  height: 58px
+  font-size: 17px
+  width: 100%
+  padding: 0 15px
+  font-family: $KievitProMediumFont
+  background: $color_theme
+  transition: .3s background-color
+  color: #fff
+  border: none
+  appearance: none
+  letter-spacing: 0.2px
+  border-radius: 5px
+
+  +min-w($tablet_mf)
+    height: 90px
+    font-size: 24px
+
+  .no-touch &:hover,
+  .no-touch &:focus
+    background: $color_active
+
+
+.new-field-base__control-wrap--select
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    width: 10px
+    height: 7px
+    top: 50px
+    right: 20px
+    background-image: url('./arrow-bottom.svg')
+    transform: rotate(0deg)
+    transition: .25s transform
+
+    +max-w($mobile_lg_max)
+      top: 20px
+
+    +mediamaxmin($desktop_sm_mf, $tablet_lg)
+      right: 10px
+
+
+
+
+// Input type="checkbox"
+
+.form-checkbox
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  width: 100%
+  z-index: 2
+
+  .form-checkbox__label
+    user-select: none
+    position: relative
+    font-size: 17px
+    line-height: 25px
+    color: #fff
+    border: none
+    margin-right: 0
+    -webkit-tap-highlight-color: transparent
+
+    &:focus
+      background-color: inherit
+      color: inherit
+
+    &::before
+      width: 40px
+      height: 25px
+      border-radius: 50px
+      background: #FAF8F3
+      border: none
+      transition: all 0.2s ease-in
+      box-shadow: none
+      margin-right: 11px
+
+
+  .form-checkbox__toggle
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 2px
+    width: 23px
+    height: 23px
+    background: $color_theme
+    border-radius: 50%
+    transition: all 0.2s ease-in
+
+    &::before
+      content: ''
+      display: block
+      width: 9px
+      height: 9px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-radius: 50%
+      background-color: #fff
+      transition: all 0.2s ease-in
+
+
+  .form-checkbox__input:checked
+    + .form-checkbox__label
+        &::before
+          background: $color_theme
+
+        .form-checkbox__toggle
+          left: 14px
+          background-color: #fff
+
+          &::before
+            background-color: $color_theme
+

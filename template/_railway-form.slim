@@ -1,0 +1,18 @@
+= stylesheet_link_tag *webpack_asset_paths('railway-form', extension: 'css')
+= javascript_include_tag *webpack_asset_paths('railway-form', extension: 'js'), :async => true
+
+form.new-search-forms.js-railway-form.railway-forms class="#{'new-search-forms--' + theme if defined?(theme)}" data-submit-options="#{local_assigns[:submit_options].to_json}" data-autocomplete-url="#{local_assigns[:autocomplete_url]}" data-form-type="#{local_assigns[:form_type]}"
+  .new-search-forms__fields
+    .new-search-forms__field.js-field-from.railway-forms__field--1 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+      = render "commercial/search-forms/fields/base-field", label: 'Откуда', placeholder_text: 'Откуда', 'autocomplete': true, 'has_arrow': true, default_data_name: :name, default_data: local_assigns[:default_city_from]
+    .new-search-forms__field.js-field-to.railway-forms__field--2 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+      = render "commercial/search-forms/fields/base-field", label: 'Куда', placeholder_text: 'Куда', 'autocomplete': true, default_data_name: :name, default_data: local_assigns[:default_city_to]
+    .new-search-forms__field.js-date-from.js-date-double.railway-forms__field--3 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+      - placeholder_from = @device == :mobile ? 'Туда' : 'Дата'
+      = render "commercial/search-forms/fields/base-field", label: 'Туда', placeholder_text: placeholder_from, 'calendar': true, has_date_icon: true
+    .new-search-forms__field.js-date-to.js-date-double.railway-forms__field--4 class="#{'new-search-forms__field--' + theme if defined?(theme)}"
+      - placeholder_to = @device == :mobile ? 'Обратно' : 'Дата'
+      = render "commercial/search-forms/fields/base-field", label: 'Обратно', placeholder_text: placeholder_to, 'calendar': true
+    = render "commercial/search-forms/fields/field-date", double: true
+  .new-search-forms__action
+    button.new-search-forms__btn Найти билеты

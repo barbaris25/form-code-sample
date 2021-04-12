@@ -1,0 +1,255 @@
+@import "~common"
+
+.container-new__inner--no-indent
+  padding: 0
+  margin: 0 0 25px
+
+  +min-w($tablet_mf)
+    margin: 0 0 20px
+
+  +min-w($desktop_mf)
+    margin: 0 0 25px
+
+.container-new__inner--com-form
+  margin-top: 28px
+
+  +min-w($tablet_mf)
+    padding: 0 18px
+    margin-top: 40px
+
+  +min-w($desktop_mf)
+    padding: 0
+
+// Border styles for avia fields
+.avia-forms
+  position: relative
+
+  .new-search-forms
+    box-shadow: none
+
+
+  .new-search-forms__fields
+    width: 100%
+    background-color: #EFEADF
+
+    +max-w($mobile_lg_max)
+      margin-bottom: 120px
+
+    +mediamaxmin($mobile_lg_max, $mobile_md_mf)
+      margin-bottom: 85px
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      margin-bottom: 80px
+
+    +min-w($desktop_mf)
+      margin-bottom: 22px
+
+
+  .new-search-forms__field
+    background-color: #fff
+
+    +min-w($desktop_mf)
+      margin-right: 2px
+
+      &.incorrect
+        border-color: #f10
+
+      &.focused
+        border-color: #000
+
+
+  .avia-forms__field--1,
+  .avia-forms__field--2
+    flex-basis: 100%
+
+    +min-w($tablet_mf)
+      flex-basis: calc(50% - 1px)
+      margin-bottom: 2px
+
+    +min-w($desktop_mf)
+      margin-bottom: 0
+
+
+  .avia-forms__field--3,
+  .avia-forms__field--4
+    flex-basis: 50%
+    max-width: 50%
+
+    +max-w($mobile_lg)
+      flex-basis: calc(50% - 0.5px)
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      flex-basis: calc(50% - 1px)
+
+
+  .avia-forms__field--1
+    +max-w($tablet_lg)
+      border-radius: 5px 5px 0 0
+
+    +min-w($tablet_mf)
+      margin-right: 2px
+      border-radius: 5px 0 0 0
+
+    +min-w($desktop_mf)
+      flex-basis: calc(22.75% - 2px)
+      border-radius: 5px 0 0 5px
+
+
+  .avia-forms__field--2
+    +max-w($mobile_lg_max)
+      margin: 1px 0
+
+    +min-w($desktop_mf)
+      border-top-right-radius: 5px
+      flex-basis: calc(25.25% - 2px)
+
+
+  .avia-forms__field--3
+    +min-w($desktop_mf)
+      flex-basis: 20%
+
+    +max-w($tablet_lg)
+      margin-right: 1px
+
+    +mediamaxmin($tablet_lg, $tablet_mf)
+      margin-right: 2px
+
+    +min-w($desktop_mf)
+      flex-basis: calc(15.1% - 2px)
+
+
+  .avia-forms__field--4
+    +min-w($desktop_mf)
+      flex-basis: calc(12% - 2px)
+
+
+  .avia-forms__field--5
+    +max-w($tablet_lg)
+      flex-basis: 100%
+      margin-top: 2px
+      border-radius: 0 0 5px 5px
+
+    +max-w($mobile_lg_max)
+      margin-top: 1px
+
+    +min-w($desktop_mf)
+      margin-right: 0
+      margin-top: 0
+      border-radius: 0 5px 5px 0
+      flex-basis: 25%
+
+
+  // Inner styles for fields
+  .avia-forms__field--1
+    .new-field-base__input
+      padding-left: 30px
+      background-image: url('./icon-from.svg')
+      background-repeat: no-repeat
+      background-position: 0 58%
+
+    .field-base__changer
+      +min-w($tablet_mf)
+        right: -17px
+
+
+  .avia-forms__field--2
+    +min-w($desktop_mf)
+      border-radius: 0
+
+    .new-field-base__input
+      padding-left: 30px
+      background-image: url('./icon-to.svg')
+      background-repeat: no-repeat
+      background-position: 0 58%
+
+
+  .avia-forms__field--3, .avia-forms__field--4
+    .new-field-base__input
+      padding: 0
+      border: none
+      background: transparent
+      font-size: 21px
+      height: auto
+      color: inherit
+
+      +max-w($mobile_lg_max)
+        font-size: 16px
+
+      +min-w($tablet_mf)
+        background-size: auto
+
+      .no-touch &:hover
+        cursor: pointer
+
+
+  .avia-forms__field--5
+    &.passenger-field__open .new-field-base__control-wrap
+      +max-w($mobile_lg_max)
+        padding: 0 12px
+
+
+    .new-field-base__input
+      cursor: pointer
+
+
+    .new-field-base__control-wrap
+      +max-w($mobile_lg_max)
+        padding: 13px 12px 14px
+
+
+  .new-field-base__date-control
+    padding-left: 30px
+
+    +min-w($tablet_mf)
+      padding-left: 28px
+
+
+  .new-field-base__date-icon
+    left: 0
+
+    +min-w($tablet_mf)
+      left: 3px
+
+
+  .avia-forms__appendage
+    display: block
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 85px
+
+    +mediamaxmin($mobile_lg_max, $mobile_md_mf)
+      display: flex
+      bottom: 95px
+
+    +min-w($tablet_mf)
+      display: flex
+      bottom: 122px
+
+    +min-w($desktop_mf)
+      position: static
+      align-items: center
+
+
+    .form-checkbox
+      +max-w($mobile_md)
+        &:first-child
+          margin: 20px 0
+
+      +min-w($desktop_mf)
+        width: auto
+
+        &:first-child
+          margin-right: 38px
+
+
+  .field-autocomplete__dropdown-name
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: center
+
+
+  .new-search-forms__btn
+    +min-w($tablet_mf)
+      font-size: 21px

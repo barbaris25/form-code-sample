@@ -1,0 +1,87 @@
+@import "~common"
+
+.counter-field__count
+  display: block
+  margin-bottom: 12px
+
+  &:last-child
+    margin-bottom: 0
+
+
+.counter-field__counter-inner
+  display: flex
+  justify-content: space-between
+  align-items: center
+  -webkit-tap-highlight-color: transparent
+
+
+.counter-field__label
+  max-width: 55%
+  font-size: 15px
+
+
+.counter-field__counter-wrap
+  display: flex
+  max-width: 45%
+
+
+.counter-field__result
+  max-width: 32px
+  width: 100%
+  padding: 0 7px
+  font-size: 15px
+  text-align: center
+  border: none
+
+
+.counter-field__button
+  border: none
+  padding: 0
+  position: relative
+  display: block
+  width: 28px
+  height: 28px
+  border-radius: 50%
+  background-color: #F9F7F2
+  transition: 0.25s background-color
+  cursor: pointer
+
+  &.inactive
+    opacity: 0.5
+    pointer-events: none
+
+
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: block
+    width: 10px
+    height: 2px
+    background-color: #AAAAAA
+    border-radius: 50%
+    z-index: 3
+    transition: .25s background-color
+
+  &.js-increment
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      display: block
+      width: 2px
+      height: 10px
+      background-color: #AAAAAA
+      border-radius: 50%
+      z-index: 3
+      transition: .25s background-color
+
+  &:hover
+    background-color: $color_lightyellow
+
+    &::before, &::after
+      background-color: #000
